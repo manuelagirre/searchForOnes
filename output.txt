@@ -1,1 +1,1 @@
-1111111
+Longest '1' sequence is 7

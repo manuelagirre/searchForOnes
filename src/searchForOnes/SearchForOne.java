@@ -1,6 +1,7 @@
 package searchForOnes;
 
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -8,59 +9,44 @@ import java.io.PrintWriter;
 public class SearchForOne {
 
 	public static void main(String[] args) throws IOException {
+		//open the file with the input data
 		FileReader file = new FileReader ("input.txt");
 		BufferedReader buf = new BufferedReader(file);
 		String line = null;
-		int startIndex = 0;
-		int startIndexOld = 0;
-		int finishIndex = 0;
-		int finishIndexOld = 0;
-		int numberOfOnes = 0;
-		int numberOfOnesOld = 0;
 		try {
 			line = buf.readLine();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		char c[] = line.toCharArray();
-		for (int i = 1; i < c.length; i++){
-			if (c[i-1] == '0' && c[i] == '1'){
-				//start of sequence
-				startIndex = i;
-				numberOfOnes++;
-			} else if (c[i-1] == '1' && c[i] == '0'){
-				// end of sequence
-				finishIndex = i-1;
-				if (numberOfOnesOld < numberOfOnes) {
-					numberOfOnesOld = numberOfOnes;
-					startIndexOld = startIndex;
-					finishIndexOld = finishIndex;
-				}
-				numberOfOnes = 0;
-				if (numberOfOnesOld > (c.length - i)) {
-					PrintWriter p = new PrintWriter("output.txt");
-					for (int j = startIndexOld; j < finishIndexOld+1; j++){
-						p.write(c[j]);
-					}
-					p.close();
-					return;
-				}
-			} else if (c[i-1] == '1' && c[i] == '1'){
-				//sequence continues
-				numberOfOnes++;
-			} else if (c[i-1] == '0' && c[i] == '0'){
-				//do nothing
-			} else {
-				System.out.println("Wrong data " + i);
-			}
-			
-		}
+		//close the resource
 		buf.close();
-		PrintWriter p = new PrintWriter("output.txt");
-		for (int i = startIndexOld; i < finishIndexOld+1; i++){
-			p.write(c[i]);
+		char c[] = line.toCharArray();
+		//main method to search for the number of longest "1" sequence
+		char toFind = '1';
+		int answer = getLongestSequenceOfChar(c, toFind);
+		System.out.println("Longest " + "\'" + toFind + "\'" + " sequence is " + answer);
+	}
+	private static int getLongestSequenceOfChar(char[] c, char toFind) throws FileNotFoundException{
+		int out = 0;
+		int current = 0;
+		//start to find the start and finish index of the sequence
+		for (int i = 0; i < c.length; i++){
+			if (c[i] == toFind) {
+				current++;
+			} else {
+				if (out < current){
+					out = current;
+					current = 0;
+				} else {
+					current = 0;
+				}
+			}
 		}
+		//write the answer to the file
+		PrintWriter p = new PrintWriter("output.txt");
+		p.write("Longest " + "\'" + toFind + "\'" + " sequence is " + out);
 		p.close();
+		return out;
 	}
 
 }
