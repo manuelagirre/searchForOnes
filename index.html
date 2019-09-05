@@ -8,14 +8,19 @@
 	$Lightning.use(
 		"c:LightningOutTestApp",
 		function(){
-			console.log("done");
+		$Lightning.createComponent(
+			"c:LightningOutTestComp",
+			{ },
+			"test",
+			function(){console.log("done");}
+		)
 		},
 		"https://otto-prm--dev03.lightning.force.com",
 		"00D6E0000004x4p!ASAAQC980vMMT8ZUj625FVawTvOaoFpci23YPYPQebM11WogJ9xwogCNZ3gXxs23URcJJ4zcAoKN_iHtdTx6DUsUdrPv8VDw"
 	);
 </script>
 
-LightningOutTestApp
+	<div id="test"></div>
 
 <h1>My First Heading</h1>
 <p>My first paragraph.</p>
