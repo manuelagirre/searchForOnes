@@ -20,7 +20,14 @@
 			);
 			$Lightning.createComponent(
 				"c:LightningOutTestComp",
-				{ },
+				{ 
+					handler : {
+						doSomething : function(){
+							console.log("second button");
+							location.reload();
+						}
+					} 
+				},
 				"test1",
 				function(){console.log("done1");}
 			);
