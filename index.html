@@ -8,12 +8,18 @@
 	$Lightning.use(
 		"c:LightningOutTestApp",
 		function(){
-		$Lightning.createComponent(
-			"c:LightningOutTestComp",
-			{ },
-			"test",
-			function(){console.log("done");}
-		)
+			$Lightning.createComponent(
+				"c:LightningOutTestComp",
+				{ },
+				"test",
+				function(){console.log("done");}
+			);
+			$Lightning.createComponent(
+				"c:LightningOutTestComp",
+				{ },
+				"test1",
+				function(){console.log("done1");}
+			);
 		},
 		"https://otto-prm--dev03.lightning.force.com",
 		"00D6E0000004x4p!ASAAQD6pBdrIRgaZVg6azrvkpbDaXSLYTriITxc7zGcKjaPRDtrPkgXKITzpvzIpE82PFqpQxBRGqvThKx_OM4rKg2kQG0GJ"
@@ -21,6 +27,7 @@
 </script>
 
 	<div id="test"></div>
+	<div id="test1"></div>
 
 <h1>My First Heading</h1>
 <p>My first paragraph.</p>
