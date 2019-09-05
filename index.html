@@ -10,7 +10,11 @@
 		function(){
 			$Lightning.createComponent(
 				"c:LightningOutTestComp",
-				{ },
+				{ 
+					handler : {
+						doSomething : function(){console.log("doSomething");}
+					} 
+				},
 				"test",
 				function(){console.log("done");}
 			);
