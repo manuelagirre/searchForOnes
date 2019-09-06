@@ -7,15 +7,21 @@
 <script type="text/javascript">
 	$Lightning.use(
 		"c:LightningOutTestApp",
+		//callback function when lightning out application is connected
 		function(){
+			//create lightning component by name
 			$Lightning.createComponent(
 				"c:LightningOutTestComp",
+				//parameters to pass into lightning component
 				{ 
 					handler : {
+						//callback function that is called when button is pressed
 						doSomething : function(){console.log("doSomething");}
 					} 
 				},
+				//id of the html element, where to put the created component
 				"test",
+				//callback function that will be invoked when the component is created
 				function(){console.log("done");}
 			);
 			$Lightning.createComponent(
