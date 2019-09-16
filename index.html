@@ -11,6 +11,19 @@
 		function(){
 			//create lightning component by name
 			$Lightning.createComponent(
+				"c:AccountShopInfoComponent",
+				{ 
+					handler : {
+						doSomething : function(){
+							console.log("second button");
+							window.location = "https://nonlive.portal.otto.market";
+						}
+					} 
+				},
+				"test1",
+				function(){console.log("done1");}
+			);
+			$Lightning.createComponent(
 				"c:AccountPaymentInfoComponent",
 				{ 
 					handler : {
