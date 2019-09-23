@@ -13,11 +13,13 @@
 			window.opener.location = "?"+anchor;
 		} else {
 			console.log(window.location);
-			var params = String(window.location).split("?")[1].split("&");
-			token = params[0].split("=")[1].replace("%21","!");
-			console.log(params);
-			console.log(token);
-			createLightning();
+			if (String(window.location).includes("?")) {
+				var params = String(window.location).split("?")[1].split("&");
+				token = params[0].split("=")[1].replace("%21","!");
+				console.log(params);
+				console.log(token);
+				createLightning();
+			}
 		}
 	}
 	function connectSalesforce(){
