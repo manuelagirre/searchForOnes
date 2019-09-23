@@ -66,6 +66,19 @@
 						"test1",
 						function(){console.log("done1");}
 					);
+					$Lightning.createComponent(
+						"c:LightningOutTestComp",
+						{ 
+							handler : {
+								doSomething : function(){
+									console.log("second button");
+									window.location = "https://nonlive.portal.otto.market";
+								}
+							} 
+						},
+						"test1",
+						function(){console.log("done1");}
+					);
 				},
 				"https://otto-prm--dev03.lightning.force.com",
 				token
