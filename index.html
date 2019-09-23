@@ -12,6 +12,7 @@
 			console.log(anchor);
 			window.opener.location = "?"+anchor;
 		} else {
+			console.log(window.location);
 			var params = String(window.location).split("?");
 			console.log(params);
 		}
