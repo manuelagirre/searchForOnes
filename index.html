@@ -10,14 +10,15 @@
 		if (window.opener != undefined) {
 			var anchor = String(window.location).split("#")[1];
 			console.log(anchor);
-			window.opener.token = "?"+anchor;
+			var params = anchor.split("&");
+			token = params[0].split("=")[1].replace("%21","!");
+			window.opener.token = token;
 			window.opener.dropToken();
 			//window.close();
 		} else {
 			console.log(window.location);
 			if (String(window.location).includes("?")) {
-				var params = String(window.location).split("?")[1].split("&");
-				token = params[0].split("=")[1].replace("%21","!");
+				
 				console.log(params);
 				console.log(token);
 				createLightning();
