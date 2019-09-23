@@ -10,8 +10,9 @@
 		if (window.opener != undefined) {
 			var anchor = String(window.location).split("#")[1];
 			console.log(anchor);
-			window.opener.location = "?"+anchor;
-			window.close();
+			window.opener.token = "?"+anchor;
+			window.opener.dropToken();
+			//window.close();
 		} else {
 			console.log(window.location);
 			if (String(window.location).includes("?")) {
@@ -22,6 +23,9 @@
 				createLightning();
 			}
 		}
+	}
+	function dropToken() {
+		console.log(token);
 	}
 	function connectSalesforce(){
 		var newWindow = window.open(
