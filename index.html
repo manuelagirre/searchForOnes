@@ -24,41 +24,43 @@
 			"https://dev03-otto-community-prototyp.cs85.force.com/services/oauth2/authorize?response_type=token&client_id=3MVG9X0_oZyBSzHqKgD3id9ce01oQT.Ix25z4glKJdIt8uyofWCsQu6QZd1PPFh0IPzhG6weJ2QTOhbOnPk9o&redirect_uri=https://manuelagirre.github.io/searchForOnes/&state=mystate", 
 			"_blank", "width=400, height=450");
 	}
-	$Lightning.use(
-		"c:LightningOutTestApp",
-		//callback function when lightning out application is connected
-		function(){
-			//create lightning component by name
-			$Lightning.createComponent(
-				"c:AccountShopInfoComponent",
-				{ 
-					handler : {
-						doSomething : function(){
-							console.log("second button");
-							window.location = "https://nonlive.portal.otto.market";
-						}
-					} 
-				},
-				"test1",
-				function(){console.log("done1");}
-			);
-			$Lightning.createComponent(
-				"c:AccountPaymentInfoComponent",
-				{ 
-					handler : {
-						doSomething : function(){
-							console.log("second button");
-							window.location = "https://nonlive.portal.otto.market";
-						}
-					} 
-				},
-				"test1",
-				function(){console.log("done1");}
-			);
-		},
-		"https://otto-prm--dev03.lightning.force.com",
-		"00D6E0000004x4p!ASAAQJ2Iajd4UU2dtNPwgTsKcpQwYrJWhbZIWr3KudQVkMmr1NVQTnykxHAVugpAU6kX.Y6MDNAxvTyF_cVZPTc.MH18qW_."
-	);
+	if (token != null) {
+		$Lightning.use(
+			"c:LightningOutTestApp",
+			//callback function when lightning out application is connected
+			function(){
+				//create lightning component by name
+				$Lightning.createComponent(
+					"c:AccountShopInfoComponent",
+					{ 
+						handler : {
+							doSomething : function(){
+								console.log("second button");
+								window.location = "https://nonlive.portal.otto.market";
+							}
+						} 
+					},
+					"test1",
+					function(){console.log("done1");}
+				);
+				$Lightning.createComponent(
+					"c:AccountPaymentInfoComponent",
+					{ 
+						handler : {
+							doSomething : function(){
+								console.log("second button");
+								window.location = "https://nonlive.portal.otto.market";
+							}
+						} 
+					},
+					"test1",
+					function(){console.log("done1");}
+				);
+			},
+			"https://otto-prm--dev03.lightning.force.com",
+			token
+		);
+	}
 </script>
 	<div style="padding-top:50px;padding-bottom:50px;background-color:#EEEEEE;">
 		<button type="button" onclick="connectSalesforce();">Click Me!</button>
