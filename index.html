@@ -11,6 +11,7 @@
 			var anchor = String(window.location).split("#")[1];
 			console.log(anchor);
 			window.opener.location = "?"+anchor;
+			window.close();
 		} else {
 			console.log(window.location);
 			if (String(window.location).includes("?")) {
