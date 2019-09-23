@@ -1,10 +1,21 @@
 <!DOCTYPE html>
 <html>
-<body>
+<body onload="onloadHandler()">
 
 <script src="https://otto-prm--dev03.my.salesforce.com/lightning/lightning.out.js"></script>
 
 <script type="text/javascript">
+	var token;
+	function onloadHandler() {
+		if (window.opener !== undefined) {
+			var anchor = String(window.location).split("#")[1];
+			console.log(anchor);
+			window.opener.location = "?"+anchor;
+		} else {
+			var params = String(window.location).split("?");
+			console.log(params);
+		}
+	}
 	function connectSalesforce(){
 		var newWindow = window.open(
 			"https://dev03-otto-community-prototyp.cs85.force.com/services/oauth2/authorize?response_type=token&client_id=3MVG9X0_oZyBSzHqKgD3id9ce01oQT.Ix25z4glKJdIt8uyofWCsQu6QZd1PPFh0IPzhG6weJ2QTOhbOnPk9o&redirect_uri=https://manuelagirre.github.io/searchForOnes/&state=mystate", 
