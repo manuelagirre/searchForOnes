@@ -5,6 +5,11 @@
 <script src="https://otto-prm--dev03.my.salesforce.com/lightning/lightning.out.js"></script>
 
 <script type="text/javascript">
+	function connectSalesforce(){
+		var window = window.open(
+			"https://dev03-otto-community-prototyp.cs85.force.com/services/oauth2/authorize?response_type=token&client_id=3MVG9HxRZv05HarRlC8u6kwjJaf0L4ERkJGYgvT1oFbrqImmCwHuX_bsG4n7aMTYxAKb3pi3_nowVE5.sRMfQ&redirect_uri=https://manuelagirre.github.io/searchForOnes/&state=mystate", 
+			"_blank", "width=400, height=450");
+	}
 	$Lightning.use(
 		"c:LightningOutTestApp",
 		//callback function when lightning out application is connected
@@ -41,7 +46,9 @@
 		"00D6E0000004x4p!ASAAQJ2Iajd4UU2dtNPwgTsKcpQwYrJWhbZIWr3KudQVkMmr1NVQTnykxHAVugpAU6kX.Y6MDNAxvTyF_cVZPTc.MH18qW_."
 	);
 </script>
-	<div style="padding-top:50px;padding-bottom:50px;background-color:#EEEEEE;">Header</div>
+	<div style="padding-top:50px;padding-bottom:50px;background-color:#EEEEEE;">
+		<button type="button" onclick="connectSalesforce();">Click Me!</button>
+	</div>
 	<div id="test1" style="margin-left:15%;width:70%;"></div>
 
 <h1>My First Heading</h1>
