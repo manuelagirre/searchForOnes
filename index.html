@@ -13,8 +13,8 @@
 			var params = anchor.split("&");
 			token = params[0].split("=")[1].replace("%21","!");
 			window.opener.token = token;
-			window.opener.dropToken();
-			//window.close();
+			window.opener.createLightning();
+			window.close();
 		} else {
 			console.log(window.location);
 			if (String(window.location).includes("?")) {
