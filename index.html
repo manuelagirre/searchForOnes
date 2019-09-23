@@ -7,7 +7,7 @@
 <script type="text/javascript">
 	var token;
 	function onloadHandler() {
-		if (window.opener !== undefined) {
+		if (window.opener != undefined) {
 			var anchor = String(window.location).split("#")[1];
 			console.log(anchor);
 			window.opener.location = "?"+anchor;
