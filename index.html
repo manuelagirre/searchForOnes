@@ -54,14 +54,9 @@
 						function(){console.log("done1");}
 					);
 					$Lightning.createComponent(
-						"c:AccountPaymentInfoComponent",
+						"lightning:listView",
 						{ 
-							handler : {
-								doSomething : function(){
-									console.log("second button");
-									window.location = "https://nonlive.portal.otto.market";
-								}
-							} 
+							"objectApiName":"Account"						
 						},
 						"test1",
 						function(){console.log("done1");}
