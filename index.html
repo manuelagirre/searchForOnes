@@ -53,14 +53,6 @@
 						"test1",
 						function(){console.log("done1");}
 					);
-					$Lightning.createComponent(
-						"lightning:listView",
-						{ 
-							"objectApiName":"Account"						
-						},
-						"test1",
-						function(){console.log("done1");}
-					);
 				},
 				"https://otto-prm--dev03.lightning.force.com",
 				token
@@ -69,7 +61,7 @@
 	}
 </script>
 	<div style="padding-top:50px;padding-bottom:50px;background-color:#EEEEEE;">
-		<button type="button" onclick="connectSalesforce();">Click Me!</button>
+		<button type="button" onclick="connectSalesforce();">Login</button>
 	</div>
 	<div id="test1" style="margin-left:15%;width:70%;"></div>
 
