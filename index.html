@@ -2,7 +2,7 @@
 <html>
 <body onload="onloadHandler()">
 
-<script src="https://otto-prm--dev03.my.salesforce.com/lightning/lightning.out.js"></script>
+<script src="https://otto-prm--preprod.my.salesforce.com/lightning/lightning.out.js"></script>
 
 <script type="text/javascript">
 	var token;
@@ -30,7 +30,7 @@
 	}
 	function connectSalesforce(){
 		var newWindow = window.open(
-			"https://dev03-otto-community-prototyp.cs85.force.com/services/oauth2/authorize?response_type=token&client_id=3MVG9X0_oZyBSzHqKgD3id9ce01oQT.Ix25z4glKJdIt8uyofWCsQu6QZd1PPFh0IPzhG6weJ2QTOhbOnPk9o&redirect_uri=https://manuelagirre.github.io/searchForOnes/&state=mystate", 
+			"https://preprod-otto-community-prototyp.cs107.force.com/services/oauth2/authorize?response_type=token&client_id=3MVG9X0_oZyBSzHqKgD3id9ce01oQT.Ix25z4glKJdIt8uyofWCsQu6QZd1PPFh0IPzhG6weJ2QTOhbOnPk9o&redirect_uri=https://manuelagirre.github.io/searchForOnes/&state=mystate", 
 			"_blank", "width=400, height=450");
 	}
 	function createLightning() {
@@ -41,7 +41,7 @@
 				function(){
 					//create lightning component by name
 					$Lightning.createComponent(
-						"c:createContact",
+						"c:assortmentProfile",
 						{ 
 							handler : {
 								doSomething : function(){
@@ -54,7 +54,7 @@
 						function(){console.log("done1");}
 					);
 				},
-				"https://otto-prm--dev03.lightning.force.com",
+				"https://otto-prm--preprod.lightning.force.com",
 				token
 			);
 		}
