@@ -44,9 +44,8 @@
 						"c:AccountShopInfoComponent",
 						{ 
 							handler : {
-								doSomething : function(){
-									console.log("second button");
-									window.location = "https://nonlive.portal.otto.market";
+								onSuccess : function(){
+									console.log("onSuccess");
 								}
 							} 
 						},
