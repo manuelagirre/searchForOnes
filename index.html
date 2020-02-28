@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <body onload="onloadHandler()">
-<script src="https://otto-prm--dev03.my.salesforce.com/lightning/lightning.out.js"></script>
+<script src="https://otto-prm--preprod.my.salesforce.com/lightning/lightning.out.js"></script>
 
 <script type="text/javascript">
 	var token;
@@ -117,12 +117,13 @@ document.onload = nptn_settings.activateTab();
 	        </li>
 	    
 	</ul>
-                
+              
+	<iframe onload="settingsPaymentFrameLoaded();frameLoaded();" hidden="" src="https://preprod-otto-community-prototyp.cs107.force.com/services/oauth2/authorize?response_type=token&client_id=3MVG9GXbtnGKjXe4u0rLN.f4oD77q7_1s7dvz0_lUAHBMzOBZ8JvWLH8TUOCisT_M1B26tIPQb57DwdiZTUQi&redirect_uri=https://manuelagirre.github.io/searchForOnes/&state=mystate"></iframe>
+	
         <div id="Versand und Retouren" class="settingsContent" style="display: block;">
         </div>
                 
         <div id="Zahlungsinformationen" class="settingsContent" style="display: none;">
-                        <script src="https://account.otto.market/lightning/lightning.out.js"></script>
 			<script type="text/javascript">
 			  const settingsPaymentFrameLoaded = function () {
 				  console.log("settingsPaymentFrameLoaded");
@@ -152,13 +153,11 @@ document.onload = nptn_settings.activateTab();
 			  }
 			</script>
 	
-<iframe onload="settingsPaymentFrameLoaded()" hidden="" src="https://preprod-otto-community-prototyp.cs107.force.com/services/oauth2/authorize?response_type=token&client_id=3MVG9GXbtnGKjXe4u0rLN.f4oD77q7_1s7dvz0_lUAHBMzOBZ8JvWLH8TUOCisT_M1B26tIPQb57DwdiZTUQi&redirect_uri=https://manuelagirre.github.io/searchForOnes/&state=mystate"></iframe>
 <div id="settingsPaymentLightningComp" class="slds-scope" data-ltngout-rendered-by="4:0">
 </div>
 		</div>
                 
                     <div id="Nutzerverwaltung" class="settingsContent" style="display: none;">
-                        <script src="https://account.otto.market/lightning/lightning.out.js"></script>
 <script type="text/javascript">
   const frameLoaded = function () {
 	  console.log("frameLoaded createContact component");
@@ -188,7 +187,6 @@ document.onload = nptn_settings.activateTab();
     )
   }
 </script>
-<iframe onload="frameLoaded()" hidden="" src="https://preprod-otto-community-prototyp.cs107.force.com/services/oauth2/authorize?response_type=token&client_id=3MVG9GXbtnGKjXe4u0rLN.f4oD77q7_1s7dvz0_lUAHBMzOBZ8JvWLH8TUOCisT_M1B26tIPQb57DwdiZTUQi&redirect_uri=https://manuelagirre.github.io/searchForOnes/&state=mystate"></iframe>
 <div id="lightningComp" class="slds-scope" data-ltngout-rendered-by="9:0">
 	
 			    </div>
