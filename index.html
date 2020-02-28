@@ -130,6 +130,7 @@ document.onload = nptn_settings.activateTab();
     const anchor = String(iframeLocation).split('#')[1]
     const params = anchor.split('&')
     const token = params[0].split('=')[1].replace('%21', '!').replace('%2F', '/')
+    console.log("token " +  token);
     $Lightning.use(
       'c:OBCLightningOutApp',
       //callback function when lightning out application is connected
