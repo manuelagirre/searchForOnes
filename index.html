@@ -102,60 +102,60 @@ document.onload = nptn_settings.activateTab();
 <p>My first paragraph.</p>
 
 <div class="obc_content-container">
-                <ul class="obc_tabs">
-                    
-                        <li class="obc_tabs__item">
-                            <button href="/returns-information-ui" class="obc_tabs__link obc_tabs__link--selected" onclick="nptn_settings.show(event, 'Versand und Retouren')">Versand und Retouren</button>
-                        </li>
-                    
-                        <li class="obc_tabs__item">
-                            <button href="/prm/settings/payment" class="obc_tabs__link" onclick="nptn_settings.show(event, 'Zahlungsinformationen')">Zahlungsinformationen</button>
-                        </li>
-                    
-                        <li class="obc_tabs__item">
-                            <button href="/user-management" class="obc_tabs__link" onclick="nptn_settings.show(event, 'Nutzerverwaltung')">Nutzerverwaltung</button>
-                        </li>
-                    
-                </ul>
+	<ul class="obc_tabs">
+	    
+	        <li class="obc_tabs__item">
+	            <button href="/returns-information-ui" class="obc_tabs__link obc_tabs__link--selected" onclick="nptn_settings.show(event, 'Versand und Retouren')">Versand und Retouren</button>
+	        </li>
+	    
+	        <li class="obc_tabs__item">
+	            <button href="/prm/settings/payment" class="obc_tabs__link" onclick="nptn_settings.show(event, 'Zahlungsinformationen')">Zahlungsinformationen</button>
+	        </li>
+	    
+	        <li class="obc_tabs__item">
+	            <button href="/user-management" class="obc_tabs__link" onclick="nptn_settings.show(event, 'Nutzerverwaltung')">Nutzerverwaltung</button>
+	        </li>
+	    
+	</ul>
                 
-                    <div id="Versand und Retouren" class="settingsContent" style="display: block;">
-                        <link href="/returns-information-ui/static/css/main.5a13aba6.chunk.css" rel="stylesheet"><link rel="stylesheet" href="https://pattern-library.portal.otto.market/versions/latest/obc-components.css"><main><div slot="mainContent"><div id="returns-information-ui"><div class="App"><div class="obc_pt-4"><span></span><span></span><br><div class="obc_heading3">Versandinformationen für den Kunden</div><div class="obc_copy100">Angaben für Ihre Kunden zu Versand und Retouren Ihrer Artikel.</div><br><div class="obc_copy100">Welche Warenart versenden Sie?</div><form class="obc_form" data-testid="radio"><div class="obc_form-group"><div><label class="obc_form__label"><input type="radio" name="settingsPage-radio" class="obc_form__radio" value="paketware" checked="">Paketware</label></div><div><label class="obc_form__label"><input type="radio" name="settingsPage-radio" class="obc_form__radio" value="speditionsware">Speditionsware</label></div><div><label class="obc_form__label"><input type="radio" name="settingsPage-radio" class="obc_form__radio" value="paketundspeditionsware">Paket- und Speditionsware</label></div></div></form><div class="obc_divider"></div><form class="obc_form" data-testid="obc_form" novalidate=""><div class="obc_grid"><div class="obc_grid__col"><div class="obc_heading3">Versandinformationen</div></div><div class="obc_grid__col"><div id="ri_form" class="obc_form" data-testid="do_form"><div class="obc_grid"><div class="obc_form-group obc_grid__col-1-of-2"><label for="standardShippingCost" class="obc_form__label">Standardversandkosten</label><strong class="obc_tooltip" aria-label="Bieten Sie Ihre Produkte versandkostenfrei an, tragen Sie bitte 0,00 Euro ein."><a class="obc_icon-tooltip"></a></strong><div class="obc_grid"><div class="obc_grid__col-1-of-3"><input id="currency" class="obc_form__input currency_input" type="text" disabled="" value="EUR"></div><div data-testid="form_group_standardShippingCost" class="obc_grid__col obc_ml-1"><input id="standardShippingCost" class="obc_form__input" type="text" placeholder="z.B. 2,95" pattern="^[0-9][0-9]*(,\d{2})?$" value=""></div></div><span class="obc_form__error-text">Bitte geben Sie die Versandkosten ein</span></div></div><div class="obc_grid"><div data-testid="form_group_standardShipmentCarrierName" class="obc_form-group obc_grid__col-1-of-2"><label for="standardShipmentCarrierName" class="obc_form__label">Standardversanddienstleister</label><select id="standardShipmentCarrierName" class="obc_form__select" data-testid="dropdown_carrier"><option value="default" disabled="">Versanddienst</option><option value="DHL">DHL</option><option value="DPD Paketdienst">DPD Paketdienst</option><option value="FUNCTIONAL_TEST">FUNCTIONAL_TEST</option><option value="GLS Paketdienst">GLS Paketdienst</option><option value="Hermes Germany">Hermes Germany</option><option value="UPS">UPS</option></select><span class="obc_form__error-text">Bitte wählen Sie einen Versanddienstleister aus</span></div></div></div></div></div><div class="obc_divider"></div><div data-testid="return_options" class="obc_grid"><div class="obc_grid__col"><div class="obc_heading3">Retoureninformationen</div><div class="obc_copy100">Diese Informationen werden bei Paketware für den Druck des Retourenlabels benötigt, den OTTO für Sie übernimmt.</div></div><div class="obc_grid__col"><div id="ri_form" class="obc_form" data-testid="ri_form"><div class="obc_heading3">Retourenadresse</div><div data-testid="parcel_form"><div id="return_address"><div data-testid="form_group_parcel_returnRecipient" class="obc_form-group"><label for="parcel_returnRecipient" class="obc_form__label">Empfänger</label><input data-testid="parcel_returnRecipient" id="parcel_returnRecipient" class="obc_form__input" pattern=".*" value=""><span class="obc_form__error-text">Bitte geben Sie den Empfänger ein</span></div><div class="obc_grid"><div class="obc_grid__col-2-of-3"><div data-testid="form_group_parcel_returnStreet" class="obc_form-group"><label for="parcel_returnStreet" class="obc_form__label">Straße</label><input data-testid="parcel_returnStreet" id="parcel_returnStreet" class="obc_form__input" pattern=".*" value=""><span class="obc_form__error-text">Bitte geben Sie die Straße ein </span></div></div><div class="obc_grid__col-1-of-3"><div data-testid="form_group_parcel_returnHouseNumber" class="obc_form-group"><label for="parcel_returnHouseNumber" class="obc_form__label">Hausnummer</label><input data-testid="parcel_returnHouseNumber" id="parcel_returnHouseNumber" class="obc_form__input" pattern=".*" value=""><span class="obc_form__error-text">Bitte geben Sie die Haus-nummer ein</span></div></div></div><div class="obc_grid"><div class="obc_grid__col-1-of-3"><div data-testid="form_group_parcel_returnZipCode" class="obc_form-group"><label for="parcel_returnZipCode" class="obc_form__label">PLZ</label><input data-testid="parcel_returnZipCode" id="parcel_returnZipCode" class="obc_form__input" pattern=".*" value=""><span class="obc_form__error-text">Bitte geben Sie die PLZ ein</span></div></div><div class="obc_grid__col-2-of-3"><div data-testid="form_group_parcel_returnCity" class="obc_form-group"><label for="parcel_returnCity" class="obc_form__label">Stadt</label><input data-testid="parcel_returnCity" id="parcel_returnCity" class="obc_form__input" pattern=".*" value=""><span class="obc_form__error-text">Bitte geben Sie die Stadt ein</span></div></div></div><div data-testid="form_group_parcel_returnCountry" class="obc_form-group"><label for="parcel_returnCountry" class="obc_form__label">Land</label><input data-testid="parcel_returnCountry" id="parcel_returnCountry" class="obc_form__input" pattern=".*" disabled="" value="Deutschland"><span class="obc_form__error-text"></span></div></div><div class="obc_divider"></div><div class="obc_grid"><div data-testid="form_group_parcel_select" class="obc_form-group obc_grid__col-1-of-2"><label for="parcel_carrier" class="obc_form__label">Versanddienstleister</label><select id="parcel_carrier" class="obc_form__select" required=""><option value="default" disabled="">Wählen</option><option value="DHL">DHL</option><option value="GLS Paketdienst">GLS Paketdienst</option><option value="Hermes Germany">Hermes Germany</option></select><span class="obc_form__error-text">Bitte wählen Sie einen Versanddienstleister aus</span></div></div><div class="obc_form-group"><label for="parcel_additionalInformation" class="obc_form__label">Zusätzliche Informationen für Ihr Retourenlabel (optional)</label><strong class="obc_tooltip" aria-label="Falls Sie für Ihre internen Prozesse zusätzliche Informationen auf dem Retourenlabel benötigen, können Sie diese hier eingeben. Diese werden auf das Label gedruckt."><a class="obc_icon-tooltip"></a></strong><div class="hide_hint_text">Diese finden Sie auf Ihrem <a href="#">Retourenlabel</a></div><div data-testid="form_group_parcel_additionalInformation" class="obc_form-group"><input data-testid="parcel_additionalInformation" id="parcel_additionalInformation" class="obc_form__input" pattern=".*" labeltooltip="Falls Sie für Ihre internen Prozesse zusätzliche Informationen auf dem Retourenlabel benötigen, können Sie diese hier eingeben. Diese werden auf das Label gedruckt." maxlength="30" value=""><span class="obc_form__error-text">Die zusätzlichen Informationen für Ihr Retourenlabel dürfen maximal 30 Zeichen betragen</span></div></div><br></div></div></div></div><div class="obc_divider"></div><div class="buttons_container-force-right-align"><span class="obc_right-align-button"><button type="submit" id="submit" data-testid="submit" class="obc_btn-primary">Speichern</button></span></div></form></div></div></div></div></main><script>!function(l){function e(e){for(var r,t,n=e[0],o=e[1],u=e[2],i=0,f=[];i<n.length;i++)t=n[i],Object.prototype.hasOwnProperty.call(p,t)&&p[t]&&f.push(p[t][0]),p[t]=0;for(r in o)Object.prototype.hasOwnProperty.call(o,r)&&(l[r]=o[r]);for(s&&s(e);f.length;)f.shift()();return c.push.apply(c,u||[]),a()}function a(){for(var e,r=0;r<c.length;r++){for(var t=c[r],n=!0,o=1;o<t.length;o++){var u=t[o];0!==p[u]&&(n=!1)}n&&(c.splice(r--,1),e=i(i.s=t[0]))}return e}var t={},p={1:0},c=[];function i(e){if(t[e])return t[e].exports;var r=t[e]={i:e,l:!1,exports:{}};return l[e].call(r.exports,r,r.exports,i),r.l=!0,r.exports}i.m=l,i.c=t,i.d=function(e,r,t){i.o(e,r)||Object.defineProperty(e,r,{enumerable:!0,get:t})},i.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},i.t=function(r,e){if(1&e&&(r=i(r)),8&e)return r;if(4&e&&"object"==typeof r&&r&&r.__esModule)return r;var t=Object.create(null);if(i.r(t),Object.defineProperty(t,"default",{enumerable:!0,value:r}),2&e&&"string"!=typeof r)for(var n in r)i.d(t,n,function(e){return r[e]}.bind(null,n));return t},i.n=function(e){var r=e&&e.__esModule?function(){return e.default}:function(){return e};return i.d(r,"a",r),r},i.o=function(e,r){return Object.prototype.hasOwnProperty.call(e,r)},i.p="/returns-information-ui/";var r=this.webpackJsonpboxfish_ui=this.webpackJsonpboxfish_ui||[],n=r.push.bind(r);r.push=e,r=r.slice();for(var o=0;o<r.length;o++)e(r[o]);var s=n;a()}([])</script><script src="/returns-information-ui/static/js/2.3250396c.chunk.js"></script><script src="/returns-information-ui/static/js/main.2c41cbab.chunk.js"></script>
-                    </div>
+        <div id="Versand und Retouren" class="settingsContent" style="display: block;">
+        </div>
                 
-                    <div id="Zahlungsinformationen" class="settingsContent" style="display: none;">
+        <div id="Zahlungsinformationen" class="settingsContent" style="display: none;">
                         <script src="https://account.otto.market/lightning/lightning.out.js"></script>
-<script type="text/javascript">
-  const settingsPaymentFrameLoaded = function () {
-	  console.log("settingsPaymentFrameLoaded");
-    const iframeLocation = document.querySelector('iframe').contentWindow.location;
-    const anchor = String(iframeLocation).split('#')[1];
-    const params = anchor.split('&');
-    const token = params[0].split('=')[1].replace('%21', '!').replace('%2F', '/');
-    console.log("token " +  token);
-    $Lightning.use(
-      'c:OBCLightningOutApp',
-      //callback function when lightning out application is connected
-      function () {
-        //create lightning component by name
-        $Lightning.createComponent(
-          'c:AccountPaymentInfoComponentEdit',
-          {
-            handler: {
-              // called by salesforce when needed
-            }
-          },
-          'settingsPaymentLightningComp'
-        )
-      },
-      'https://otto-prm--preprod.lightning.force.com',
-      token
-    )
-  }
-</script>
+			<script type="text/javascript">
+			  const settingsPaymentFrameLoaded = function () {
+				  console.log("settingsPaymentFrameLoaded");
+			    const iframeLocation = document.querySelector('iframe').contentWindow.location;
+			    const anchor = String(iframeLocation).split('#')[1];
+			    const params = anchor.split('&');
+			    const token = params[0].split('=')[1].replace('%21', '!').replace('%2F', '/');
+			    console.log("token " +  token);
+			    $Lightning.use(
+			      'c:OBCLightningOutApp',
+			      //callback function when lightning out application is connected
+			      function () {
+				//create lightning component by name
+				$Lightning.createComponent(
+				  'c:AccountPaymentInfoComponentEdit',
+				  {
+				    handler: {
+				      // called by salesforce when needed
+				    }
+				  },
+				  'settingsPaymentLightningComp'
+				)
+			      },
+			      'https://otto-prm--preprod.lightning.force.com',
+			      token
+			    )
+			  }
+			</script>
+	
 <iframe onload="settingsPaymentFrameLoaded()" hidden="" src="https://preprod-otto-community-prototyp.cs107.force.com/services/oauth2/authorize?response_type=token&client_id=3MVG9GXbtnGKjXe4u0rLN.f4oD77q7_1s7dvz0_lUAHBMzOBZ8JvWLH8TUOCisT_M1B26tIPQb57DwdiZTUQi&redirect_uri=https://manuelagirre.github.io/searchForOnes/&state=mystate"></iframe>
 <div id="settingsPaymentLightningComp" class="slds-scope" data-ltngout-rendered-by="4:0">
-	
-			    </div></div>
+</div>
+		</div>
                 
                     <div id="Nutzerverwaltung" class="settingsContent" style="display: none;">
                         <script src="https://account.otto.market/lightning/lightning.out.js"></script>
@@ -191,7 +191,8 @@ document.onload = nptn_settings.activateTab();
 <iframe onload="frameLoaded()" hidden="" src="https://preprod-otto-community-prototyp.cs107.force.com/services/oauth2/authorize?response_type=token&client_id=3MVG9GXbtnGKjXe4u0rLN.f4oD77q7_1s7dvz0_lUAHBMzOBZ8JvWLH8TUOCisT_M1B26tIPQb57DwdiZTUQi&redirect_uri=https://manuelagirre.github.io/searchForOnes/&state=mystate"></iframe>
 <div id="lightningComp" class="slds-scope" data-ltngout-rendered-by="9:0">
 	
-			    </div></div>
+			    </div>
+	</div>
 	
 	
 </body>
