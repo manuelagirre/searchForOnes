@@ -58,6 +58,41 @@
 			);
 		}
 	}
+	let nptn_settings = (function () {
+    return {
+        activateTab: function () {
+            let tabs = document.getElementsByClassName("obc_tabs__link");
+            tabs[0].className += " obc_tabs__link--selected";
+
+            let tabcontent = document.getElementsByClassName("settingsContent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+                if (i === 0) {
+                    tabcontent[i].style.display = "block";
+                }
+            }
+        },
+
+        show: function (evt, title) {
+            let i, tabcontent, tablinks;
+
+            tabcontent = document.getElementsByClassName("settingsContent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+
+            tablinks = document.getElementsByClassName("obc_tabs__link");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" obc_tabs__link--selected", "");
+            }
+
+            // Show the current tab, and add an "active" class to the button that opened the tab
+            document.getElementById(title).style.display = "block";
+            evt.currentTarget.className += " obc_tabs__link--selected";
+        }
+    };
+})();
+document.onload = nptn_settings.activateTab();
 </script>
 	<div style="padding-top:50px;padding-bottom:50px;background-color:#EEEEEE;">
 		<button type="button" onclick="connectSalesforce();">Login</button>
