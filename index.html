@@ -57,41 +57,6 @@
 			);
 		}
 	}
-	let nptn_settings = (function () {
-    return {
-        activateTab: function () {
-            let tabs = document.getElementsByClassName("obc_tabs__link");
-            tabs[0].className += " obc_tabs__link--selected";
-
-            let tabcontent = document.getElementsByClassName("settingsContent");
-            for (i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].style.display = "none";
-                if (i === 0) {
-                    tabcontent[i].style.display = "block";
-                }
-            }
-        },
-
-        show: function (evt, title) {
-            let i, tabcontent, tablinks;
-
-            tabcontent = document.getElementsByClassName("settingsContent");
-            for (i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].style.display = "none";
-            }
-
-            tablinks = document.getElementsByClassName("obc_tabs__link");
-            for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].className = tablinks[i].className.replace(" obc_tabs__link--selected", "");
-            }
-
-            // Show the current tab, and add an "active" class to the button that opened the tab
-            document.getElementById(title).style.display = "block";
-            evt.currentTarget.className += " obc_tabs__link--selected";
-        }
-    };
-})();
-document.onload = nptn_settings.activateTab();
 </script>
 	<div style="padding-top:50px;padding-bottom:50px;background-color:#EEEEEE;">
 		<button type="button" onclick="connectSalesforce();">Login</button>
@@ -100,97 +65,7 @@ document.onload = nptn_settings.activateTab();
 
 <h1>My First Heading</h1>
 <p>My first paragraph.</p>
-
-<div class="obc_content-container">
-	<ul class="obc_tabs">
-	    
-	        <li class="obc_tabs__item">
-	            <button href="/returns-information-ui" class="obc_tabs__link obc_tabs__link--selected" onclick="nptn_settings.show(event, 'Versand und Retouren')">Versand und Retouren</button>
-	        </li>
-	    
-	        <li class="obc_tabs__item">
-	            <button href="/prm/settings/payment" class="obc_tabs__link" onclick="nptn_settings.show(event, 'Zahlungsinformationen')">Zahlungsinformationen</button>
-	        </li>
-	    
-	        <li class="obc_tabs__item">
-	            <button href="/user-management" class="obc_tabs__link" onclick="nptn_settings.show(event, 'Nutzerverwaltung')">Nutzerverwaltung</button>
-	        </li>
-	    
-	</ul>
-              
-	<iframe onload="settingsPaymentFrameLoaded();frameLoaded();" hidden="" src="https://preprod-otto-community-prototyp.cs107.force.com/services/oauth2/authorize?response_type=token&client_id=3MVG9GXbtnGKjXe4u0rLN.f4oD77q7_1s7dvz0_lUAHBMzOBZ8JvWLH8TUOCisT_M1B26tIPQb57DwdiZTUQi&redirect_uri=https://manuelagirre.github.io/searchForOnes/&state=mystate"></iframe>
-	
-        <div id="Versand und Retouren" class="settingsContent" style="display: block;">
-        </div>
-                
-        <div id="Zahlungsinformationen" class="settingsContent" style="display: none;">
-			<script type="text/javascript">
-			  const settingsPaymentFrameLoaded = function () {
-				  console.log("settingsPaymentFrameLoaded");
-			    const iframeLocation = document.querySelector('iframe').contentWindow.location;
-			    const anchor = String(iframeLocation).split('#')[1];
-			    const params = anchor.split('&');
-			    const token = params[0].split('=')[1].replace('%21', '!').replace('%2F', '/');
-			    console.log("token " +  token);
-			    $Lightning.use(
-			      'c:OBCLightningOutApp',
-			      //callback function when lightning out application is connected
-			      function () {
-				//create lightning component by name
-				$Lightning.createComponent(
-				  'c:AccountPaymentInfoComponentEdit',
-				  {
-				    handler: {
-				      // called by salesforce when needed
-				    }
-				  },
-				  'settingsPaymentLightningComp'
-				)
-			      },
-			      'https://otto-prm--preprod.lightning.force.com',
-			      token
-			    )
-			  }
-			</script>
-	
-<div id="settingsPaymentLightningComp" class="slds-scope" data-ltngout-rendered-by="4:0">
-</div>
-		</div>
-                
-                    <div id="Nutzerverwaltung" class="settingsContent" style="display: none;">
-<script type="text/javascript">
-  const frameLoaded = function () {
-	  console.log("frameLoaded createContact component");
-    const iframeLocation = document.querySelector('iframe').contentWindow.location;
-    const anchor = String(iframeLocation).split('#')[1];
-    const params = anchor.split('&');
-    const token = params[0].split('=')[1].replace('%21', '!').replace('%2F', '/');
-    console.log("token " +  token);
-    $Lightning.use(
-      'c:OBCLightningOutApp',
-      //callback function when lightning out application is connected
-      function () {
-        //create lightning component by name
-        $Lightning.createComponent(
-          'c:createContact',
-          {
-            handler: {
-              // called by salesforce when needed
-            }
-          },
-          'lightningComp'
-        )
-      },
-      'https://otto-prm--preprod.lightning.force.com',
-      token,
-      function(){console.log("done1");}
-    )
-  }
-</script>
-<div id="lightningComp" class="slds-scope" data-ltngout-rendered-by="9:0">
-	
-			    </div>
-	</div>
+	<div id="test1"></div>
 	
 	
 </body>
