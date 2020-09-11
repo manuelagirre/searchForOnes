@@ -6,6 +6,7 @@
 <script type="text/javascript">
 	var token;
 	function onloadHandler() {
+		createLightning();
 		if (window.opener != undefined) {
 			var anchor = String(window.location).split("#")[1];
 			console.log(anchor);
